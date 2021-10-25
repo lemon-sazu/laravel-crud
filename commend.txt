@@ -1,0 +1,15 @@
+#create app
+curl -s https://laravel.build/appname | bash
+#run app
+./vendor/bin/sail up
+(alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail' for use sail)
+#create table
+sail php artisan make:migration create_tablename_table
+#migrate table
+sail php artisan migrate
+#Seeding data
+sail php artisan db:seed
+#create controller with resorce
+sail php artisan make:controller PersonController --resource
+#create model
+sail php artisan make:model Person
